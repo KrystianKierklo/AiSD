@@ -1,4 +1,6 @@
 from typing import Any, List
+import queue
+
 
 class TreeNode:
     value: Any
@@ -59,7 +61,7 @@ class Tree:
     root: TreeNode
 
 
-    def __init__(self):
+    def __init__(self, root):
         self.root = root
 
 
@@ -69,8 +71,8 @@ class Tree:
         if self.root.value == parent_name:
             self.root.add(TreeNode(value))
         else:
-            for child in node.children:
-                temp.pu(child)
+            for child in added_node.children:
+                temp.put(child)
         while(temp.empty() != 1):
             temp2 = temp.get()
             if temp2.value == parent_name:
@@ -92,11 +94,28 @@ class Tree:
 
 
 
-n1 = TreeNode("A")
-n2 = TreeNode("B")
-n3 = TreeNode("C")
+n1 = TreeNode("F")
+n2 = TreeNode("Z")
 
-n1.add(n2)
+#n1.add(n2)
 
-print(n1.__repr__())
-print(n1.children)
+# print(n1.__repr__())
+# print(n1.children)
+# n1.for_each_deep_first(print)
+# n1.for_each_level_order(print)
+
+drzewo = Tree(n1)
+drzewo.add("B", "F")
+drzewo.add("G", "F")
+drzewo.add("A", "B")
+drzewo.add("D", "B")
+drzewo.add("C", "D")
+drzewo.add("E", "D")
+drzewo.add("I", "G")
+drzewo.add("H", "I")
+drzewo.for_each_deep_first(print)
+print("---------------------------")
+drzewo.for_each_level_order(print)
+
+
+
