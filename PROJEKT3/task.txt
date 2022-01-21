@@ -1,0 +1,8 @@
+Niech g będzie grafem ważonym nieskierowanym (obiektem klasy Graph z lab 7).
+
+Przygotować funkcję all_weighted_shortest_paths(g: Graph, start: Any) -> Dict[Any, List[Edge]], która zwróci najkrótsze
+ścieżki z wierzchołka startowego (parametr start zawierający wartość wierzchołka startowego) do każdego pozostałego wierzchołka w grafie (wierzchołki końcowe).
+Wynikiem funkcji będzie słownik zawierający w kluczu wartość wierzchołka końcowego, a w wartości listę krawędzi tworzących najkrótszą ścieżkę
+z wierzchołka początkowego do wierzchołka końcowego.
+
+Celem sprawdzenia rozwiązania przygotować 3 dowolne grafy testowe.
